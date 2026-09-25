@@ -11,3 +11,5 @@ The Neuron class represents a node in a classification neural network. It is ess
 * **Dependencies:** NumPy
 * **Location:** See src/basicClassfier for the entry file and Neuron class source
 ***
+### UML Class Diagram
+![UML Class Diagram](https://github.com/Mo59471/APCSA_PersonalProject/blob/main/plannning/system-design/GalaxyMorphologyClassificationCNN_ClassDiagram.png?raw=True)
