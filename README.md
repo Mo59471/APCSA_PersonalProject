@@ -15,3 +15,8 @@ The Neuron class represents a node in a classification neural network. It is ess
 ![UML Class Diagram](https://github.com/Mo59471/APCSA_PersonalProject/blob/main/plannning/system-design/GalaxyMorphologyClassificationCNN_ClassDiagram.png?raw=True)
 * This diagram delineates the various support classes, the main file, and each file's respective data and behaviors, as well as a sketch of each file's interaction (arrows) 
 * This artifact will help guide the creation/coding of the basic application framework (setting up main file, support class files, initializing data, writing placeholder methods) and eventually direct the implementation of class-main file interaction, class instantiation, support class method calls ,etc.
+***
+### Logic Flow Diagram for Backpropagation
+![Logic Flow Diagram](https://github.com/Mo59471/APCSA_PersonalProject/blob/main/plannning/system-design/logicFlow.png?raw=True)
+* This diagram delineates the logical steps of the backpropagation algorithm that trains the CNN, which moves backwards through the classifier network, then the convolutional layer(s), calculating appropriate gradients analytically and updating weights and biases correspondingly
+* This artifact will guide updates to the class diagram, since additional data and methods have been introduced here upon deeper consideration of what training entails, and will serve as the master blueprint for the translation of this backpropagation algorithm into code
