@@ -12,7 +12,7 @@ The Neuron class represents a node in a classification neural network. It is ess
 * **Location:** See src/basicClassfier for the entry file and Neuron class source
 ***
 ### UML Class Diagram
-![UML Class Diagram](https://github.com/Mo59471/APCSA_PersonalProject/blob/main/plannning/system-design/GalaxyMorphologyClassificationCNN_ClassDiagram.png?raw=True)
+![UML Class Diagram](https://github.com/Mo59471/APCSA_PersonalProject/blob/main/plannning/system-design/logicFlow.png?raw=True)
 * This diagram delineates the various support classes, the main file, and each file's respective data and behaviors, as well as a sketch of each file's interaction (arrows) 
 * This artifact will help guide the creation/coding of the basic application framework (setting up main file, support class files, initializing data, writing placeholder methods) and eventually direct the implementation of class-main file interaction, class instantiation, support class method calls ,etc.
 ***
