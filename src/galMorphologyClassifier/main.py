@@ -1,3 +1,4 @@
+# Mo Spiegel | APCSA | Period 4B
 
 training = False # Run training
 
@@ -8,13 +9,13 @@ inputProbs = [] # Probabaility for each classifiacation of the input data that t
 galFeatures = [[[]]] # Features of the training data: Shape = (galaxy, x-coord, y-coord)
 galLabels = [] # Labels of the training data: Shape = (galaxy)
 
-weights = [[]] # Weights between classifier layers: Shape = (layer, receiving_neuron)
-biases = [[]] # Biases at classifier layers: Shape = (layer, receiivng_neuron)
+weights_class = [[]] # Weights between classifier layers: Shape = (layer, receiving_neuron)
+biases_class = [[]] # Biases at classifier layers: Shape = (layer, receiivng_neuron)
 
-kWeights = [[[[[]]]]] # Weights for each kernel: Shape = (layer, kernel, x-coord, y-coord, z-coord) 
-cBiases = [[]] # Biases for each channel: Shape = (layer, channel)
+weights_conv = [[[[[]]]]] # Weights for each kernel in the convolutional layers: Shape = (layer, kernel, z-coord, x-coord, y-coord) 
+biases_conv = [[]] # Biases for each channel in the convolutional layers: Shape = (layer, channel)
 
-conLayers = [] # Convolutional layers
+convLayers = [] # Convolutional layers
 poolLayers = [] # Pooling layers
 classLayers = [] # Classification layers
 
