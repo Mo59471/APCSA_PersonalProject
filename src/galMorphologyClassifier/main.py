@@ -1,5 +1,7 @@
 # Mo Spiegel | APCSA | Period 4B
 
+from TrainCNN import TrainCNN
+
 training = False # Run training
 
 inputFeatures = [[[]]] # Features of the input data: Shape = (galaxy, x-coord, y-coord)
@@ -29,8 +31,8 @@ def readParams():
 
 def train(bSize, lRate, epochNum):
     getData()
+    trainCNN = TrainCNN.TrainCNN(bSize, lRate, epochNum, galFeatures, galLabels) 
     # Call TrainCNN, call getData(), pass in the data
-    pass
 
 def instantiateLayers():
     # Append new layer instantiations to each list
