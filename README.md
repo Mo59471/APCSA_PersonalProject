@@ -20,3 +20,5 @@ The Neuron class represents a node in a classification neural network. It is ess
 ![Logic Flow Diagram](https://github.com/Mo59471/APCSA_PersonalProject/blob/main/plannning/system-design/logicFlow.png?raw=True)
 * This diagram delineates the logical steps of the backpropagation algorithm that trains the CNN, which moves backwards through the classifier network, then the convolutional layer(s), calculating appropriate gradients analytically and updating weights and biases correspondingly
 * This artifact will guide updates to the class diagram, since additional data and methods have been introduced here upon deeper consideration of what training entails, and will serve as the master blueprint for the translation of this backpropagation algorithm into code
+### Data:
+https://zenodo.org/records/3565489#.Y3vFKS-l0eY
