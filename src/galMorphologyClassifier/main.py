@@ -1,10 +1,12 @@
 # Mo Spiegel | APCSA | Period 4B
 
+import numpy as np
+from PIL import Image
 from TrainCNN import TrainCNN
 
 training = False # Run training
 
-inputFeatures = [[[]]] # Features of the input data: Shape = (galaxy, x-coord, y-coord)
+inputFeatures = [] # Features of the input data: Shape = (galaxy, x-coord, y-coord)
 inputClasses = [] # Clasification of the input data that the program guesses: Shape = (galaxy)
 inputProbs = [] # Probabaility for each classifiacation of the input data that the program guesses: Shape = (galaxy, two_probabilities)
 
@@ -22,6 +24,10 @@ poolLayers = [] # Pooling layers
 classLayers = [] # Classification layers
 
 def getData():
+    for i in range(10):
+        imgPath = f"../images/{i + 3}.jpg"
+        inputFeatures.append(np.asarray(Image.open(imgPath)))
+        print(len(inputFeatures[i]))
     # Extract data from galaxy zoo files for training
     pass
 
@@ -47,3 +53,5 @@ def main():
     instantiateLayers()
 
     # Logic for running CNN
+
+getData()
