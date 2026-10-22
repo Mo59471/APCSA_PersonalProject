@@ -24,14 +24,17 @@ convLayers = [] # Convolutional layers
 poolLayers = [] # Pooling layers
 classLayers = [] # Classification layers
 
-def getData():
-    # Get data from Galaxy Zoo
+def getData(): # load training data from Galaxy Zoo
+
+    # get image features
     for i in np.concatenate((np.arange(3,10,1), np.arange(11,20,1))):
         imgPath = f"../images/{i}.jpg"
         img = Image.open(imgPath).convert('L') # .convert('L') shifts to grayscale
         inputFeatures.append(np.asarray(img))
-        print(inputFeatures[len(inputFeatures)-1].shape) 
-    pass
+        # print(inputFeatures[len(inputFeatures)-1].shape) 
+    
+    # get image labels
+    
 
 def readParams():
     # Read the trained weights and biases, append to weights, biases, kWeights, cBiases
