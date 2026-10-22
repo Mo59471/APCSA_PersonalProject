@@ -22,3 +22,4 @@ The Neuron class represents a node in a classification neural network. It is ess
 * This artifact will guide updates to the class diagram, since additional data and methods have been introduced here upon deeper consideration of what training entails, and will serve as the master blueprint for the translation of this backpropagation algorithm into code
 ### Data:
 https://zenodo.org/records/3565489#.Y3vFKS-l0eY
+https://zenodo.org/records/4573248
