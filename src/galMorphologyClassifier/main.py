@@ -3,6 +3,7 @@
 import numpy as np
 from PIL import Image
 from TrainCNN import TrainCNN
+import matplotlib.pyplot as plt
 
 training = False # Run training
 
@@ -24,11 +25,12 @@ poolLayers = [] # Pooling layers
 classLayers = [] # Classification layers
 
 def getData():
-    for i in range(10):
-        imgPath = f"../images/{i + 3}.jpg"
-        inputFeatures.append(np.asarray(Image.open(imgPath)))
-        print(len(inputFeatures[i]))
-    # Extract data from galaxy zoo files for training
+    # Get data from Galaxy Zoo
+    for i in np.concatenate((np.arange(3,10,1), np.arange(11,20,1))):
+        imgPath = f"../images/{i}.jpg"
+        img = Image.open(imgPath).convert('L') # .convert('L') shifts to grayscale
+        inputFeatures.append(np.asarray(img))
+        print(inputFeatures[len(inputFeatures)-1].shape) 
     pass
 
 def readParams():
@@ -54,4 +56,7 @@ def main():
 
     # Logic for running CNN
 
+# Temporary method calls 
 getData()
+plt.imshow(inputFeatures[0], cmap='gray')
+plt.show()
