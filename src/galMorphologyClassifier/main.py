@@ -1,5 +1,6 @@
 # Mo Spiegel | APCSA | Period 4B
 
+from pathlib import Path
 import numpy as np
 from PIL import Image
 from TrainCNN import TrainCNN
@@ -24,14 +25,32 @@ convLayers = [] # Convolutional layers
 poolLayers = [] # Pooling layers
 classLayers = [] # Classification layers
 
+def crop(img): # crop the image to remove background artifcats
+    delIndex1 = []
+    delIndex2 = []
+
+    cropSize = (200,200) # Dimensions of the crop
+    for i in range(len(img)): 
+        if i < len(img)/2-cropSize[0]/2 or i >= len(img)/2+cropSize[0]/2:
+            delIndex1.append(i)
+        for j in range(len(img[i])):
+            if j < len(img[i])/2-cropSize[1]/2 or j >= len(img[i])/2+cropSize[1]/2:
+                delIndex2.append(j)
+
+    return np.delete(np.delete(img, delIndex1, axis = 0), delIndex2, axis=1)
+
+def populateLayers(): # Populate the layers randomly with weights and biases
+    pass
+
 def getData(): # load training data from Galaxy Zoo
+    currentDir = Path(__file__).resolve().parent # access the current directory
+    imgDir = currentDir.parent / "images" # access the sibling images directory
 
     # get image features
     for i in np.concatenate((np.arange(3,10,1), np.arange(11,20,1))):
-        imgPath = f"../images/{i}.jpg"
-        img = Image.open(imgPath).convert('L') # .convert('L') shifts to grayscale
-        inputFeatures.append(np.asarray(img))
-        # print(inputFeatures[len(inputFeatures)-1].shape) 
+        img = Image.open(imgDir / f"{i}.jpg").convert('L') # .convert('L') shifts to grayscale
+        inputFeatures.append(crop(np.asarray(img).tolist())/255) # /255 to convert 8 bit values into 0-1
+        print(inputFeatures[len(inputFeatures)-1].shape) 
     
     # get image labels
     
@@ -61,5 +80,5 @@ def main():
 
 # Temporary method calls 
 getData()
-plt.imshow(inputFeatures[0], cmap='gray')
+plt.imshow(inputFeatures[8], cmap='gray')
 plt.show()
